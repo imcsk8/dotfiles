@@ -1,4 +1,5 @@
 require 'global.options'
+require 'global.keymaps'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
@@ -17,7 +18,34 @@ local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 require('lazy').setup({
     require 'plugins.neotree',
+    require 'plugins.gitsigns',
     require 'plugins.moonfly',
+    require 'plugins.telescope',
+    require 'plugins.lazydev',
+    require 'plugins.lsp',
+    require 'plugins.autocomplete',
+    },
+    {
+        ui = {
+            -- If you are using a Nerd Font: set icons to an empty table which will use the
+            -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
+            icons = vim.g.have_nerd_font and {} or {
+            cmd = '⌘',
+            config = '🛠',
+            event = '📅',
+            ft = '📂',
+            init = '⚙',
+            keys = '🗝',
+            plugin = '🔌',
+            runtime = '💻',
+            require = '🌙',
+            source = '📄',
+            start = '🚀',
+            task = '📌',
+            lazy = '💤 ',
+            },
+        },
 })
 
+-- TODO: make this work require 'lspconfig'.perlpls.setup()
 vim.cmd [[colorscheme moonfly]]
