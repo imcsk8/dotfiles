@@ -24,6 +24,7 @@ require('lazy').setup({
     require 'plugins.lazydev',
     require 'plugins.lsp',
     require 'plugins.autocomplete',
+    require 'plugins.lualine',
     },
     {
         ui = {
@@ -49,3 +50,8 @@ require('lazy').setup({
 
 -- TODO: make this work require 'lspconfig'.perlpls.setup()
 vim.cmd [[colorscheme moonfly]]
+require('lualine').setup {
+    options = {
+        theme = 'nightfly'
+    }
+}
