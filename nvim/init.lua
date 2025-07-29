@@ -1,5 +1,6 @@
-require 'global.options'
+require 'global.filetypes'
 require 'global.keymaps'
+require 'global.options'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
@@ -25,6 +26,7 @@ require('lazy').setup({
     require 'plugins.lsp',
     require 'plugins.autocomplete',
     require 'plugins.lualine',
+    require 'plugins.treesitter',
     },
     {
         ui = {
