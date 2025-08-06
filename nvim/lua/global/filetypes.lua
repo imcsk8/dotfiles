@@ -63,7 +63,7 @@ create_autocmd('FileType', { 'json', 'md', 'yaml', 'yml' },
     function()
         vim.bo.tabstop = 4
         vim.bo.expandtab = true
-        vim.bo.conceallevel = 0
+        vim.o.conceallevel = 0
     end
 )
 
