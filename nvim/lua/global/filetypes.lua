@@ -17,7 +17,6 @@ end
 -- FileType Specific Settings
 
 create_autocmd('FileType', {
-        'tex',
         'pl',
         'c',
         'cpp',
@@ -71,5 +70,16 @@ create_autocmd('FileType', { 'json', 'md', 'yaml', 'yml' },
 create_autocmd({ 'BufNewFile', 'BufRead' }, 'Jenkinsfile',
     function()
         vim.bo.syntax = 'groovy'
+    end
+)
+
+create_autocmd('FileType', {
+        'tex',
+    },
+    function()
+        vim.bo.textwidth = 80
+        vim.bo.tabstop = 4
+        vim.wo.spell = true
+        vim.bo.spelllang = "es"
     end
 )
