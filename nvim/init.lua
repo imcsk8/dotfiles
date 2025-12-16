@@ -1,6 +1,7 @@
 require 'global.filetypes'
 require 'global.keymaps'
 require 'global.options'
+require 'global.libxml'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
