@@ -17,3 +17,12 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' } -- What to show 
 vim.o.filetype = "on"           -- Enable file type detection
 
 vim.opt.runtimepath:remove '/usr/share/vim/vimfiles' -- separate vim plugins from neovim in case vim still in use
+
+-- Equivalent to: set autoread
+vim.opt.autoread = true
+
+-- Equivalent to: au FocusGained,BufEnter * :silent! checktime
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
+  pattern = "*",
+  command = "silent! checktime",
+})
