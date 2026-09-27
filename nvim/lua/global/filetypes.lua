@@ -16,7 +16,7 @@ end
 
 -- FileType Specific Settings
 
-create_autocmd('FileType', {
+create_autocmd({ 'BufRead', 'BufNewFile' }, {
         'pl',
         'c',
         'cpp',
@@ -39,7 +39,7 @@ create_autocmd('FileType', {
 )
 
 -- Settings for Go
-create_autocmd('FileType', { 'go', 'java', 'cs' },
+create_autocmd({ 'BufRead', 'BufNewFile' }, { 'go', 'java', 'cs' },
     function()
         vim.bo.tabstop = 4
         vim.bo.expandtab = false
@@ -49,7 +49,7 @@ create_autocmd('FileType', { 'go', 'java', 'cs' },
 )
 
 -- Settings for shell library files
-create_autocmd('FileType', 'shlib',
+create_autocmd({ 'BufRead', 'BufNewFile' }, 'shlib',
     function()
         vim.bo.tabstop = 4
         vim.bo.expandtab = false
@@ -58,7 +58,7 @@ create_autocmd('FileType', 'shlib',
 )
 
 -- Settings for Json and Markdown
-create_autocmd('FileType', { 'json', 'md', 'yaml', 'yml' },
+create_autocmd({ 'BufRead', 'BufNewFile' }, { 'json', 'md', 'yaml', 'yml' },
     function()
         vim.bo.tabstop = 4
         vim.bo.expandtab = true
@@ -73,7 +73,7 @@ create_autocmd({ 'BufNewFile', 'BufRead' }, 'Jenkinsfile',
     end
 )
 
-create_autocmd('FileType', {
+create_autocmd({ 'BufRead', 'BufNewFile' }, {
         'tex',
     },
     function()
@@ -81,5 +81,13 @@ create_autocmd('FileType', {
         vim.bo.tabstop = 4
         vim.wo.spell = true
         vim.bo.spelllang = "es"
+    end
+)
+
+-- Set syntax for systemd quadlets
+create_autocmd({ 'BufRead', 'BufNewFile' }, { '*.container', '*.volume', '*.network' },
+    function()
+        vim.bo.syntax = 'systemd'
+        vim.bo.filetype = 'systemd'
     end
 )
