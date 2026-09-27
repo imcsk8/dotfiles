@@ -235,5 +235,16 @@ return {
                 end,
             },
         }
+        -- Ruff linter
+        --require('lspconfig').ruff.setup({
+        --    init_options = {
+         --       settings = {
+                    -- empty settings
+         --       }
+         --   }
+        --})
+
+        -- Disable hover for Ruff
+
     end,
 }
